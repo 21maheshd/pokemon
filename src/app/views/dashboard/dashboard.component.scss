@@ -1,0 +1,54 @@
+.container{
+    max-width: 1400px !important;
+
+    .search-panel{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 1rem;
+
+        .search-btn{
+            i{
+                padding-right: 0.51rem;
+            }
+        }
+    }
+    .sort-panel{
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 1rem;
+        label{
+            width: 8rem;
+            margin: 5px;
+        }
+    }
+    .pagination-panel{
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 10px 0px;
+        label{
+            width: 10rem;
+            margin: 5px;
+        }
+        .pages{
+            width: 10rem !important;
+        }
+        .prev-btn, .next-btn{
+            width: 7rem !important;
+            i{
+                padding: 0 5px;
+            }
+        }
+    }
+    .form-control:focus{
+        box-shadow: none !important;
+    }
+    .pagination-footer{
+        margin-left: 58rem;
+    }
+}
+

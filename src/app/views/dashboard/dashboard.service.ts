@@ -14,6 +14,9 @@ export class DashboardService {
         if(!offset) offset = 0;
         return this.http.get(environment.pokemonAPI + `/pokemon?limit=${limit}&offset=${offset}`);
     }
+    getPokemonById(id) {
+        return this.http.get(environment.pokemonAPI + `/pokemon/${id}`);
+    }
     
     getPokemonSpecies(id) {
         return this.http.get(environment.pokemonAPI + `/pokemon-species/${id}`);

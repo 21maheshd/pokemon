@@ -1,9 +1,58 @@
 <div class="container">
   <div class="animated fadeIn">
     <div class="row" *ngIf="pokemonsList.length > 0 ">
-      <div class="col-xs-2 col-sm-6 col-md-4" *ngFor="let item of pokemonsList">
+      <div class="col-md-12">
+        <div class="row">
+        <div class="col-md-4 search-panel">
+        <div class="input-group">
+          <input type="email" [(ngModel)]="searchStr" id="input2-group2" name="input2-group2" class="form-control" placeholder="Search pokemons" autocomplete="email">
+          <span class="input-group-append">
+            <button *ngIf="!searchStr" type="button" (click)="searchPokemons($event,searchStr)" class="btn btn-primary search-btn"><i class="fa fa-search"></i>Search</button>
+            <button *ngIf="searchStr" type="button" (click)="searchStr = ''" class="btn btn-primary search-btn"><i class="fa fa-trash"></i>Clear</button>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-4 sort-panel">
+        <label>Sort By</label>
+        <select class="form-control" (change)="changeSortKey($event)" name="sort" id="sort">
+          <option value="name" selected>Name</option>
+          <option value="height">Height</option>
+          <option value="weight">Weight</option>
+        </select>
+        <select class="form-control" (change)="changeSortOrder($event)" name="sort-order" id="sort-order">
+          <option value="asc" selected>ASC</option>
+          <option value="desc">DESC</option>
+        </select>
+      </div>
+      <div class="col-md-4 pagination-panel">
+        <label>Results per page</label>
+        <select class="form-control pages" (change)="changePage($event)" name="pages" id="pages">
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <button class="btn btn-primary prev-btn" (click)="prevPokemons($event)"><i class="fa fa-chevron-left"></i>Prev</button>
+        <button class="btn btn-primary next-btn" (click)="nextPokemons($event)">Next<i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+    </div>
+      <div class="col-xs-2 col-sm-6 col-md-4" *ngFor="let item of (pokemonsList | filter:searchStr) as pokemons">
         <app-pokemon-card [data]="item"></app-pokemon-card>
       </div>
+        <div class="col-md-12">
+          <div class="row">
+      <div class="col-md-4 pagination-panel pagination-footer">
+        <label>Results per page</label>
+        <select class="form-control pages" (change)="changePage($event)" name="pages" id="pages">
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <button class="btn btn-primary prev-btn" (click)="prevPokemons($event)"><i class="fa fa-chevron-left"></i>Prev</button>
+        <button class="btn btn-primary next-btn" (click)="nextPokemons($event)">Next<i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+    </div>
     </div>
   </div>
 </div>

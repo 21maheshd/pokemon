@@ -1,0 +1,18 @@
+.card-header{
+    text-align: center !important;
+    label{
+        cursor: pointer;
+    }
+}
+label{
+    margin-bottom: 0 !important;
+}
+.card-body{
+    img{
+        width: 100%;
+        cursor: pointer;
+    }
+    .row{
+        justify-content: center;
+    }
+}

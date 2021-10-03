@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { DashboardService } from './dashboard.service';
 import { FilterPipe } from '../../pipe/filter.pipe';
-import { PokemonCardComponent } from './components/pokemon-card.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { PokemonCardComponent } from './components/pokemon-card.component';
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
-  declarations: [ DashboardComponent, PokemonCardComponent ],
+  declarations: [ DashboardComponent, PokemonCardComponent, FilterPipe, PokemonDetailsComponent ],
   providers: [DashboardService]
 })
 export class DashboardModule { }

@@ -1,10 +1,8 @@
-<div class="animated fadeIn">
-  <div class="row">
-    <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-info">
-        <div class="card-body pb-0">
-          Display Pokemons cards
-        </div>
+<div class="container">
+  <div class="animated fadeIn">
+    <div class="row" *ngIf="pokemonsList.length > 0 ">
+      <div class="col-xs-2 col-sm-6 col-md-4" *ngFor="let item of pokemonsList">
+        <app-pokemon-card [data]="item"></app-pokemon-card>
       </div>
     </div>
   </div>

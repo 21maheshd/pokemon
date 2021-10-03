@@ -1,0 +1,13 @@
+      <div class="card">
+        <div class="card-header">
+          <label class="text-center">{{data.name | titlecase}}</label>
+        </div>
+        <div class="card-body">
+        <img class="img-responsive" src="{{data.sprites.other['official-artwork'].front_default}}" width="300" height="250">
+        </div>
+        <div class="card-footer">
+         <label class="pull-left" >Height : {{data.height}}</label>
+         <label class="pull-right" >weight : {{data.weight}}</label>
+          {{description}}
+        </div>
+      </div>
